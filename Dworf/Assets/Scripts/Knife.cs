@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Knife : MonoBehaviour
 {
+    //Висит на сомом ноже для регистрации попаданий и прочего
+
     public float Speed;
 
     public delegate void KnifesDelegate();
@@ -12,6 +14,10 @@ public class Knife : MonoBehaviour
 
     public static KnifesDelegate PlusApple;
 
+    private void Start()
+    {
+        Vibration.Init();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,13 +25,9 @@ public class Knife : MonoBehaviour
         {
             KnifesLose();
         }
-        else if (collision.gameObject.CompareTag("Apple"))
-        {
-            PlusApple();
-        }
         else
         {
-            Handheld.Vibrate();
+            Vibration.VibratePop();
             gameObject.transform.parent = collision.gameObject.transform;
             Destroy(GetComponentInChildren<KnifeControle>().gameObject);
             GetComponent<Rigidbody>().velocity = Vector3.zero;

@@ -11,6 +11,8 @@ public class ControlScript : MonoBehaviour
     int NumberApple;
 
     public GameObject AppleObj;
+    [SerializeField]
+    GameObject animationZone;
 
 
     //Канвас выводимый при лузе
@@ -21,11 +23,12 @@ public class ControlScript : MonoBehaviour
     public List<GameObject> Balks;
     public GameObject ThisBalk;
 
-    // Количество ножей выдаваемое игроку, а так же их максимальное и минимальное колчество
-    // Я знаю про инкапсуляцию, но в данном случае я не вижу причин прописывать её
+    //Тексты для вывода данных
     [SerializeField]
     Text currentResult, Trecord, knife, apple;
 
+    // Количество ножей выдаваемое игроку, а так же их максимальное и минимальное колчество
+    // Я знаю про инкапсуляцию, но в данном случае я не вижу причин прописывать её
     public int KnifeNumber;
     public int MinKnife, MaxKnife;
     [SerializeField]
@@ -33,6 +36,7 @@ public class ControlScript : MonoBehaviour
     [SerializeField]
     int record;
 
+    //тут происходит стартовая настройка
     private void Start()
     {
         NumberApple = PlayerPrefs.GetInt("Apple");
@@ -47,8 +51,10 @@ public class ControlScript : MonoBehaviour
         StartKnife();
         CreateBalk();
     }
+
     private void OnEnable()
     {
+        Vibration.Init();
         GameObject obj = KnifeObj;
         Knife.OtherKnife += () =>
         {
@@ -56,10 +62,9 @@ public class ControlScript : MonoBehaviour
             if (KnifeNumber == 0)
             {
                 result++;
-                Destroy(ThisBalk);
-                CreateBalk();
-                StartKnife();
-                Instantiate(obj, new Vector3(0, -3.42f), Quaternion.Euler(0, 0, -90));
+                ThisBalk.transform.parent = Instantiate(animationZone, new Vector3(0, 2.15f), new Quaternion()).transform;
+                animationZone.GetComponent<Animation>().Play();
+                Vibration.VibratePeek();
                 currentResult.text = System.Convert.ToString(result);
             }
             else

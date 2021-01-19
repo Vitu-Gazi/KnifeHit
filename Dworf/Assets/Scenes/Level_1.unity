@@ -543,6 +543,8 @@ MonoBehaviour:
   KnifeObj: {fileID: 3678904716010090821, guid: 357029b18dee2094abb7094ca48d01d1,
     type: 3}
   AppleObj: {fileID: 1105760525757012, guid: bfec01bc3e4d0444dbe595b4f55c6730, type: 3}
+  animationZone: {fileID: 8068570889261152436, guid: d9cdf37fbf0c22d49bbefa1de746b042,
+    type: 3}
   LoseCanvas: {fileID: 1490231854}
   Balks:
   - {fileID: 8090783399421169876, guid: fa1aa7d0fe8eea84c8379e0d765b89b6, type: 3}
@@ -554,7 +556,7 @@ MonoBehaviour:
   Trecord: {fileID: 1504935452}
   knife: {fileID: 454979178}
   apple: {fileID: 1785785708}
-  KnifeNumber: 0
+  KnifeNumber: 10
   MinKnife: 7
   MaxKnife: 11
   result: 0

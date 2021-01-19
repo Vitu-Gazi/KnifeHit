@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BalkScript : MonoBehaviour
 {
+    //Скрипт балки
     [SerializeField]
     Apple apple;
 
@@ -34,9 +35,15 @@ public class BalkScript : MonoBehaviour
             Instantiate(apple.AppleObj, new Vector3(0, 3.36f, 0), new Quaternion()).transform.parent = gameObject.transform;
         }
     }
+    private void OnDestroy()
+    {
+        FindObjectOfType<ControlScript>().CreateBalk();
+        FindObjectOfType<ControlScript>().StartKnife();
+        Instantiate(FindObjectOfType<ControlScript>().KnifeObj, new Vector3(0, -3.42f), Quaternion.Euler(0, 0, -90));
+    }
 
 
-    //Коруина, хотелсделать через неё изменение вращения балки
+    //Коруина, хотелсделать через неё изменение вращения балки во время игры
     IEnumerator RotationTime ()
     {
         transform.rotation *= Quaternion.Euler(0, 0, random);

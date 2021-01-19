@@ -65,11 +65,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Apple.cs" />
     <Compile Include="Assets\Scripts\BalkScript.cs" />
+    <Compile Include="Assets\Scripts\ChooseKnife.cs" />
     <Compile Include="Assets\Scripts\ControlScript.cs" />
     <Compile Include="Assets\Scripts\DestroyScript.cs" />
     <Compile Include="Assets\Scripts\Knife.cs" />
     <Compile Include="Assets\Scripts\KnifeControle.cs" />
     <Compile Include="Assets\Scripts\StartLevel.cs" />
+    <Compile Include="Assets\Vibrate\Vibration-master\Vibration\Example\VibrationExample.cs" />
+    <Compile Include="Assets\Vibrate\Vibration-master\Vibration\Vibration.cs" />
     <None Include="Assets\Hand Painted Seamless Wood Texture\Documentation\Documentation.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -688,6 +691,15 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/vitug/Documents/Dworf/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>C:/Users/vitug/Documents/Dworf/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>C:/Users/vitug/Documents/Dworf/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>C:/Users/vitug/Documents/Dworf/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KnifeControle : MonoBehaviour
 {
+    //Скрипт для метания ножа. Изначально думал сделать через ивенты, но там что-то пошло не по плану, а решение я нашел уже после
     public float Speed;
 
     private void OnMouseDown()
